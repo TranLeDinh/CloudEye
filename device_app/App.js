@@ -8,6 +8,18 @@ export default function App() {
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.front);
   const [detectedPerson, setDetectedPerson] = useState('');
+  fetch('/taketrainpath',{
+      method: 'POST',
+      body: JSON.stringify({
+        content:data.uri
+      })
+    })
+  fetch('/taketestpath',{
+      method: 'POST',
+      body: JSON.stringify({
+        content:data.uri
+      })
+    })
   useEffect(() => {
     fetch('/train');
   }, []);
