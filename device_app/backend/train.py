@@ -1,6 +1,6 @@
 import os
-def train():
-        TrainingImagePath=r"C:\Users\Admin\Desktop\nerual network\Face Images\Final Training Images"
+def train(train_path):
+        TrainingImagePath=train_path
  
         from keras.preprocessing.image import ImageDataGenerator
 
