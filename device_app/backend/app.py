@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
 from test import test as tmtest
-from train import train as tmtrain
+from train import fulltrain as tmtrain
 
 app = Flask(__name__)
 
