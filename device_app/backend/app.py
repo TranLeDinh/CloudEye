@@ -9,6 +9,7 @@ from flask_marshmallow import Marshmallow
 
 from test import test as tmtest
 from train import fulltrain as tmtrain
+from post import sendSignal as sendSignal
 
 app = Flask(__name__)
 
