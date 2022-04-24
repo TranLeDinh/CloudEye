@@ -7,8 +7,8 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
-from test import test
-from train import train
+from test import test as tmtest
+from train import train as tmtrain
 
 app = Flask(__name__)
 
@@ -94,6 +94,15 @@ def add_info():
     db.session.commit()
     return info_schema.jsonify(infos)
     
+train_path=
+image_path=
+@app.route('/test')
+def test():
+  return tmtest(train_path,image_path)
 
+@app.route('/train')
+def train():
+  tmtrain(train_path)
+    
 if __name__ == "main":
     app.run(debug=True)
