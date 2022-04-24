@@ -10,8 +10,8 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from keras.preprocessing import image
 from keras.models import load_model
-def test():
-        TrainingImagePath=r"C:\Users\Admin\Desktop\nerual network\Face Images\Final Training Images"
+def test(train_path,test_path):
+        TrainingImagePath=train_path
  
         from keras.preprocessing.image import ImageDataGenerator
 # Understand more about ImageDataGenerator at below link
@@ -64,7 +64,7 @@ def test():
  
 # The number of neurons for the output layer is equal to the number of faces
         OutputNeurons=len(ResultMap)
-        ImagePath=r"C:\Users\Admin\Desktop\nerual network\Face Images\Final Testing Images\Face2.jpg"
+        ImagePath=test_path
         test_image=image.load_img(ImagePath,target_size=(64, 64))
         test_image=image.img_to_array(test_image)
  
