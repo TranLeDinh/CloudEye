@@ -94,8 +94,19 @@ def add_info():
     db.session.commit()
     return info_schema.jsonify(infos)
     
-train_path=
-image_path=
+train_path=''
+image_path=''
+
+@app.route('/taketrainpath', methods=['POST'])
+def take_train_path():
+    request_data = json.loads(request.data)
+    train_path = request_data['content']
+    
+@app.route('/taketestpath', methods=['POST'])
+def take_test_path():
+    request_data = json.loads(request.data)
+    image_path = request_data['content']
+
 @app.route('/test')
 def test():
   return tmtest(train_path,image_path)
