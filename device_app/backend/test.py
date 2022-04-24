@@ -77,4 +77,3 @@ def test():
                 print('Prediction is: ',ResultMap[np.argmax(result)])
         else:
                 print('Unknown person')
-test()
