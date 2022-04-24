@@ -8,7 +8,9 @@ export default function App() {
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.front);
   const [detectedPerson, setDetectedPerson] = useState('');
-  fetch('/train')
+  useEffect(() => {
+    fetch('/train');
+  }, []);
   useEffect(() => {
     fetch('/test').then(res => res.json()).then(json => {
       setDetectedPerson(json.detect);
