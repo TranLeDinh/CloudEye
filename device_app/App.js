@@ -7,7 +7,15 @@ export default function App() {
   const [camera, setCamera] = useState(null);
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.front);
-
+  const [detectedPerson, setDetectedPerson] = useState('');
+  fetch('/train')
+  useEffect(() => {
+    fetch('/test').then(res => res.json()).then(json => {
+      setDetectedPerson(json.detect);
+    });
+  }, []);
+  //use detectedPerson as output of test
+  
   useEffect(() => {
     (async () => {
       const cameraStatus = await Camera.requestCameraPermissionsAsync();
