@@ -4,15 +4,15 @@ def train(train_path):
  
         from keras.preprocessing.image import ImageDataGenerator
 
+
+        test_datagen = ImageDataGenerator()
+ 
+# Generating the Training Data
         train_datagen = ImageDataGenerator(
                 shear_range=0.1,
                 zoom_range=0.1,
                 horizontal_flip=True)
  
-
-        test_datagen = ImageDataGenerator()
- 
-# Generating the Training Data
         training_set = train_datagen.flow_from_directory(
                 TrainingImagePath,
                 target_size=(64, 64),
@@ -106,6 +106,7 @@ def train(train_path):
         classifier
         classifier.save('keras_model.h5')
         return scores[1]
-accurary=0
-while accurary<0.93:
-        accurary=train()
+def fulltrain(train_path):
+        accurary=0
+        while accurary<0.93:
+                accurary=train(train_path)
