@@ -54,8 +54,8 @@ if getPort() != "None":
     isMicrobitConnected = True
 
 
-def processData(data):
-  client.publish("bbc-temp", splitData[2])
+def sendSignal():
+  client.publish("bbc-temp", 1)
 
 """mess = ""
 def readSerial():
