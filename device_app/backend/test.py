@@ -73,9 +73,9 @@ def test(train_path,test_path):
                         print(100*result[0])
                         p=100*max(result[0])
                         if p>96.5:
-                                return True
+                                return ResultMap[np.argmax(result)]
                         else:
-                                return False
+                                return "Nguoi la"
         
         
         
