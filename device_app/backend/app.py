@@ -9,7 +9,8 @@ from flask_marshmallow import Marshmallow
 
 from test import test as tmtest
 from train import fulltrain as tmtrain
-from post import sendSignal as sendSignal
+from post import sendOpenSignal as Open
+from post import sendNotOpenSignal as NotOpen
 
 app = Flask(__name__)
 
@@ -94,6 +95,14 @@ def add_info():
     db.session.add(infos)
     db.session.commit()
     return info_schema.jsonify(infos)
+
+@app.route('/open')
+def open():
+    sendOpenSignal()
+
+@app.route('/notopen')
+def not_open():
+    sendNotOpenSignal()
 
 @app.route('/taketrainpath', methods=['POST'])
 def take_train_path():
