@@ -73,9 +73,9 @@ def test(train_path,test_path):
                         print(100*result[0])
                         p=100*max(result[0])
                         if p>96.5:
-                                print('Prediction is: ',ResultMap[np.argmax(result)])
+                                return True
                         else:
-                                print('Unknown person')
+                                return False
         
         
         
