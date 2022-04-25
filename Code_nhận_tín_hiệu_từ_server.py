@@ -7,7 +7,7 @@ from Adafruit_IO import MQTTClient
 
 AIO_FEED_ID = "bbc_led"
 AIO_USERNAME = "luongduy2001"
-AIO_KEY = "aio_SgDI702NwVLEX6gODohqxSZ7vxbY"
+AIO_KEY = ""
 
 AIO_FEED_IDS = ["bbc-led", "bbc-pump"]
 
