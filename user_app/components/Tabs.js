@@ -12,8 +12,18 @@ import {Camera, Report} from './Home';
 import {COLORS, FONTS, ratioHeight, ratioWidth} from '../constants';
 
 const HomeScreen = ({route, navigation}) => {
-	const buttonClickedHandler = () => {
-    // do something
+	const open = async() => {
+    let response = await fetch('https://io.adafruit.com/api/v2/luongduy2001/feeds/bbc-pump/data', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-aio-key': "",
+      },
+      body: JSON.stringify({"feed_id": 1900491,"value": "2"}),
+    });
+  }
+  const buttonClickedHandler = () => {
+    open();
   };
   return (
         <View style = {stylesheet.container}>
