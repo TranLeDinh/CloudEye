@@ -37,6 +37,6 @@ client.connect()
 client.loop_background()
 
 def sendOpenSignal():
-  client.publish("bbc-temp", 2)
+  client.publish("bbc-pump", 2)
 def sendNotOpenSignal():
-  client.publish("bbc-temp", 3)
+  client.publish("bbc-pump", 3)
