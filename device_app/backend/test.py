@@ -69,7 +69,7 @@ def test(train_path,test_path):
  
                         test_image=np.expand_dims(test_image,axis=0)
                         result=classifier.predict(test_image,verbose=0)
-
+                        p=100*max(result[0])
                         if p>96.5:
                                 list2.append(ResultMap[np.argmax(result)])
                         else:
