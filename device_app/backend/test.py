@@ -41,7 +41,6 @@ def test(train_path,test_path):
         class_mode='categorical')
  
 
-        test_set.class_indices
 
 
         TrainClasses=training_set.class_indices
@@ -52,7 +51,6 @@ def test(train_path,test_path):
         for faceValue,faceName in zip(TrainClasses.values(),TrainClasses.keys()):
                 ResultMap[faceValue]=faceName
 
-        print("Mapping of Face and its ID",ResultMap)
  
         OutputNeurons=len(ResultMap)
         ImagePath=test_path
