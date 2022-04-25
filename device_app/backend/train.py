@@ -108,5 +108,7 @@ def train(train_path):
         return scores[1]
 def fulltrain(train_path):
         accurary=0
-        while accurary<0.93:
+        i=0
+        while accurary<0.93 and i<10:
                 accurary=train(train_path)
+                i=i+1
