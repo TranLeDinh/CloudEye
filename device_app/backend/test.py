@@ -56,15 +56,29 @@ def test(train_path,test_path):
  
         OutputNeurons=len(ResultMap)
         ImagePath=test_path
-        test_image=image.load_img(ImagePath,target_size=(64, 64))
-        test_image=image.img_to_array(test_image)
+        
+        
+        
+        list=os.listdir(ImagePath)
+        print(list)
+        for i in list:
+                if i != ".DS_Store":
+                        ImagePath2=ImagePath+"/"+i
+                        test_image=image.load_img(ImagePath2,target_size=(64, 64))
+                        test_image=image.img_to_array(test_image)
  
-        test_image=np.expand_dims(test_image,axis=0)
-        result=classifier.predict(test_image,verbose=0)
+                        test_image=np.expand_dims(test_image,axis=0)
+                        result=classifier.predict(test_image,verbose=0)
 
-        print(100*result[0])
-        p=100*max(result[0])
-        if p>96.5:
-                print('Prediction is: ',ResultMap[np.argmax(result)])
-        else:
-                print('Unknown person')
+                        print(100*result[0])
+                        p=100*max(result[0])
+                        if p>96.5:
+                                print('Prediction is: ',ResultMap[np.argmax(result)])
+                        else:
+                                print('Unknown person')
+        
+        
+        
+        
+        
+        
