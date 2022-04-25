@@ -70,12 +70,11 @@ def test(train_path,test_path):
                         test_image=np.expand_dims(test_image,axis=0)
                         result=classifier.predict(test_image,verbose=0)
 
-                        print(100*result[0])
-                        p=100*max(result[0])
                         if p>96.5:
-                                return ResultMap[np.argmax(result)]
+                                list2.append(ResultMap[np.argmax(result)])
                         else:
-                                return "Nguoi la"
+                                list2.append("Nguoi la")
+        return list2
         
         
         
