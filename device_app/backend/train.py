@@ -102,9 +102,9 @@ def train(train_path, val_path):
         print("%s%s: %.2f%%" % ("evaluate_generator ",classifier.metrics_names[1], scores[1]*100))
         classifier.save('keras_model.h5')
         return scores[1]
-def fulltrain(train_path):
-        accurary=0
+def fulltrain(val_path):
+        val_accurary=0
         i=0
-        while accurary<0.93 and i<10:
-                accurary=train(train_path)
+        while val_accurary<0.93 and i<10:
+                val_accurary=train(val_path)
                 i=i+1
