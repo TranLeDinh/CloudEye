@@ -88,8 +88,7 @@ def train(train_path):
  
 ###########################################################
         import time
-# Measuring the time taken by the model to train
-        StartTime=time.time()
+
  
 # Starting the model training
         classifier.fit_generator(
@@ -101,9 +100,6 @@ def train(train_path):
         test_set.reset()
         scores = classifier.evaluate(test_set)
         print("%s%s: %.2f%%" % ("evaluate_generator ",classifier.metrics_names[1], scores[1]*100))
-        EndTime=time.time()
-        print("###### Total Time Taken: ", round((EndTime-StartTime)/60), 'Minutes ######')
-        classifier
         classifier.save('keras_model.h5')
         return scores[1]
 def fulltrain(train_path):
