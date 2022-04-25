@@ -1,7 +1,7 @@
 import os
-def train(train_path):
+def train(train_path, val_path):
         TrainingImagePath=train_path
- 
+        ValidationPath=val_path
         from keras.preprocessing.image import ImageDataGenerator
 
 
@@ -22,7 +22,7 @@ def train(train_path):
  
 # Generating the Testing Data
         test_set = test_datagen.flow_from_directory(
-                TrainingImagePath,
+                ValidationPath,
                 target_size=(64, 64),
                 batch_size=32,
                 class_mode='categorical')
