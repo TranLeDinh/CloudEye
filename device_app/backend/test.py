@@ -58,7 +58,6 @@ def test(train_path,test_path):
         
         
         list=os.listdir(ImagePath)
-        print(list)
         for i in list:
                 if i != ".DS_Store":
                         ImagePath2=ImagePath+"/"+i
@@ -72,7 +71,18 @@ def test(train_path,test_path):
                                 list2.append(ResultMap[np.argmax(result)])
                         else:
                                 list2.append("Nguoi la")
-        return list2
+        def most_frequent(list):
+                counter = 0
+                num = list[0]
+     
+                for i in list:
+                        curr_frequency = list.count(i)
+                        if(curr_frequency> counter):
+                                counter = curr_frequency
+                                num = i
+ 
+                return num
+        return most_frequent(list2)
         
         
         
