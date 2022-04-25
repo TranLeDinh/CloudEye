@@ -3,21 +3,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {
-  Landing,
   Login,
-  ForgotPassword,
-  SendEmail,
   HomeScreen,
-  Signup,
-  SignupSuccessful,
-  PersonalData,
   Settings,
-  List,
-  AboutUs,
-  Feedbacks,
-  Notification,
-  ChangePassword,
-  ChangeLimit,
+  List
 } from './screens';
 
 import {Tabs} from './components';
