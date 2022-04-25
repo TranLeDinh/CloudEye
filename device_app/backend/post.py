@@ -36,5 +36,7 @@ client.on_subscribe = subscribe
 client.connect()
 client.loop_background()
 
-def sendSignal():
-  client.publish("bbc-temp", 1)
+def sendOpenSignal():
+  client.publish("bbc-temp", 2)
+def sendNotOpenSignal():
+  client.publish("bbc-temp", 3)
