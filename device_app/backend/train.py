@@ -15,7 +15,7 @@ def train(train_path):
         training_set = train_datagen.flow_from_directory(
                 TrainingImagePath,
                 target_size=(64, 64),
-                batch_size=32,
+                batch_size=8,
                 class_mode='categorical')
  
  
@@ -23,7 +23,7 @@ def train(train_path):
         test_set = test_datagen.flow_from_directory(
                 TrainingImagePath,
                 target_size=(64, 64),
-                batch_size=32,
+                batch_size=8,
                 class_mode='categorical')
  
 # Printing class labels for each face
@@ -90,10 +90,10 @@ def train(train_path):
 # Starting the model training
         classifier.fit_generator(
                     training_set,
-                    steps_per_epoch=trainnum//32,
+                    steps_per_epoch=trainnum//8,
                     epochs=10,
                     validation_data=test_set,
-                    validation_steps=trainnum//32)
+                    validation_steps=trainnum//8)
         test_set.reset()
         scores = classifier.evaluate(test_set)
         classifier.save('keras_model.h5')
