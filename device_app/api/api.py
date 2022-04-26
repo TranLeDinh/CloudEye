@@ -123,4 +123,4 @@ def add_recfolder():
     return ''
 
 if __name__ == "__main__":
-    app.run(host = '192.168.42.127', port=8081, debug=True)
+    app.run(host = '0.0.0.0', port=8081, debug=True)
