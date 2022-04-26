@@ -56,7 +56,7 @@ def test(train_path,test_path):
         ImagePath=test_path
         
         
-        
+        list2=[]
         list=os.listdir(ImagePath)
         for i in list:
                 if i != ".DS_Store":
