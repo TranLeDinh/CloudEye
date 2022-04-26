@@ -96,7 +96,6 @@ def train(train_path):
                     validation_steps=trainnum//32)
         test_set.reset()
         scores = classifier.evaluate(test_set)
-        print("%s%s: %.2f%%" % ("evaluate_generator ",classifier.metrics_names[1], scores[1]*100))
         classifier.save('keras_model.h5')
         return scores[1]
 def fulltrain(val_path):
