@@ -48,7 +48,6 @@ def train(train_path):
                 return count
         trainnum=countdata()
 
-        print("Mapping of Face and its ID",ResultMap)
  
 # The number of neurons for the output layer is equal to the number of faces
         OutputNeurons=len(ResultMap)
@@ -86,7 +85,6 @@ def train(train_path):
         classifier.compile(loss='categorical_crossentropy', optimizer = 'adam', metrics=["accuracy"])
  
 ###########################################################
-        import time
 
  
 # Starting the model training
