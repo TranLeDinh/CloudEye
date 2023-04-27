@@ -1,6 +1,6 @@
 # CloudEye
 ## Description
-This is the application of our Multidisciplinary Project.
+This is the application of our Multidisciplinary Project.  
 This project is an home security application with IoT devices.
 ## How to use
 There are 2 main sub-folders:
